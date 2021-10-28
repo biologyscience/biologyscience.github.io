@@ -1,3 +1,4 @@
-# Link to my page :)
+# Usefull Links :)
 
-[Click me](https://biology-science.github.io/)
+[Main page](https://biology-science.github.io/)  
+[Invite my discord bot !](https://biology-science.github.io/FunBot/Invite)
