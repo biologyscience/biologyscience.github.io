@@ -3,6 +3,7 @@
         <title>Click To Copy</title>
     </head>
     <body>
+        
         <script>
             function ClickToCopy()
             {
@@ -13,12 +14,17 @@
 
                 navigator.clipboard.writeText(CopiedText.value);
 
-                alert('Copied: ' + CopiedText.value);
-            }
+                const button = document.getElementById('button');
+
+                button.innerHTML = 'Copied !'
+
+                setTimeout(() => { button.innerHTML = 'Click to copy !'; }, 1000 * 1);
+            };
         </script>
 
-        <input type="text" value="This is the copied text" id="input">
-        
-        <button onclick="ClickToCopy()">Copy Text !</button>
+        <input type="text" value="This will be copied" id="input">
+
+        <button onclick="ClickToCopy()" id="button">Click to copy !</button>
+
     </body>
 </html>
