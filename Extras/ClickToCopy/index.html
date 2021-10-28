@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Click To Copy</title>
+    </head>
+    <body>
+        <script>
+            function ClickToCopy()
+            {
+                const CopiedText = document.getElementById('input');
+
+                CopiedText.select();
+                CopiedText.setSelectionRange(0, 99999);
+
+                navigator.clipboard.writeText(CopiedText.value);
+
+                alert('Copied: ' + CopiedText.value);
+            }
+        </script>
+
+        <input type="text" value="This is the copied text" id="input">
+        
+        <button onclick="ClickToCopy()">Copy Text !</button>
+    </body>
+</html>
