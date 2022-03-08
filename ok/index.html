@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta content="0; url=https://en.wikipedia.org/wiki/OK">
+    </head>
+    <body>
+        This is not a wikipidea page, now get rekt in
+        <div id="number">
+            3
+        </div>
+        <script>
+            let t = 2;
+
+            setInterval(() => {
+                if (t === 0)
+                {
+                    clearInterval(this);
+                    window.location.replace('https://youtu.be/j8PxqgliIno');   
+                }
+
+                else
+                {
+                    document.getElementById('number').innerHTML = t;
+                    t = t - 1;
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
