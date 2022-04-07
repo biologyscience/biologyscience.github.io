@@ -1,0 +1,241 @@
+@font-face
+{
+    font-family: 'Andika';
+    src: url('Andika.ttf');
+}
+
+body
+{
+    background-color: rgb(28, 33, 40);
+    color: white;
+    font-family: 'Andika';
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+div#top { margin-left: 130px; }
+
+div#title
+{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+span#clickMepopup
+{
+    margin-left: 35px;
+}
+
+span#woah
+{
+    font-size: 40px;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+}
+
+span#woah:hover
+{
+    color: #ffee00;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+}
+
+span#woahContent
+{
+    opacity: 0;
+    padding-bottom: 30px;
+}
+
+div#bottom
+{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+button#addToServer
+{
+    background: none;
+    color: white;
+    font-size: 30px;
+    font-family: 'Andika';
+    border-radius: 10px;
+    border: 3px solid rgb(59, 165, 93);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-image: -webkit-linear-gradient(45deg, rgb(59, 165, 93) 50%, transparent 100%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: 400ms ease-in-out;
+    transition: 400ms ease-in-out;
+}
+
+button#addToServer:hover
+{
+    background-position: 200%;
+    box-shadow: -5px 5px rgb(59, 165, 93);
+}
+
+span#madeBy { padding: 20px; }
+
+span#name
+{
+    color: #ffee00;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    text-decoration: none;
+}
+
+span#name:hover
+{
+    color: white;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+}
+
+hr#bottom
+{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(28, 33, 40), #ffee00, rgb(28, 33, 40));
+}
+
+div#mid
+{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+div#midPic
+{
+    text-align: right;
+    margin-right: 200px;
+}
+
+img#pic
+{
+    height: 200px;
+    width: 200px;
+}
+
+div#bottomButtons
+{
+    text-align: center;
+}
+
+img#discord, img#github, img#reddit, img#steam
+{
+    height: 50px;
+    width: 50px;
+}
+
+button#discord, button#github, button#reddit, button#steam
+{
+    background: none;
+    border: #ffee00;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    transition: ease-in-out;
+    transition-duration: 200ms;
+}
+
+button#discord:hover, button#github:hover, button#reddit:hover, button#steam:hover
+{
+    transform: translateY(-5px);
+    transition: ease-in-out;
+    transition-duration: 200ms;
+}
+
+
+/* body{
+  &:before{
+    content:'';
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+  }
+}
+
+.reflection-container{
+  position:relative;
+  display:inline-block;
+  vertical-align:middle;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  &:before{
+    content:'Hover me ➜';
+    color:#fff;
+    position:absolute;
+    left:-1rem;
+    top:50%;
+    font-size:6vh;
+    transform:translateX(-100%) translateY(-50%);
+  }
+
+  .reflection-content{
+    height:80vh;
+    width:80vh;
+    background:#000 url(https://unsplash.it/800/800/?random);
+    background-size:cover;
+    background-position:center;
+    transform:rotateX(0) rotateY(0);
+    pointer-events:none;
+    transition:100ms linear transform;
+    overflow:hidden;
+
+    &:before{
+      content:'';
+      position:absolute;
+      width:200%;
+      height:200%;
+      left:-50%;
+      top:-50%;
+      background: linear-gradient(rgba(255,255,255,0.2),rgba(0,0,0,0.2));
+    }
+
+  }
+
+  .reflection-grid-cell{
+    position:absolute;
+    z-index: 1;
+    width:10%;
+    height:10%;
+  }
+
+  @for $r from 1 to 11
+  { 
+
+    @for $c from 1 to 11
+    {
+
+      .reflection-grid-cell-#{( ($r*10) + $c - 10)}
+      {
+        top:($r*10%)-10%;
+        left:($c*10%)-10%;
+      }
+
+      .reflection-grid-cell-#{( ($r*10) + $c - 10)}:hover ~ .reflection-content
+      {
+        transform:rotateX((($r*-5)+25deg)) rotateY((-25deg+($c*5)));
+        &:before{ transform:translateY(25-(5%*$r)); }
+      }
+
+    }
+
+  }
+} */
