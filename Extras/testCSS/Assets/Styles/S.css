@@ -1,0 +1,168 @@
+@font-face
+{
+    font-family: 'Andika';
+    src: url('../Andika.ttf');
+}
+
+body
+{
+    background-color: rgb(27, 32, 39);
+    color: white;
+    font-family: 'Andika';
+}
+
+div#title
+{
+    font-size: 30px;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+div#top
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+span#woah
+{
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    font-size: 20px; 
+}
+
+span#woah:hover
+{
+    color: #ffee00;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+span#woahContent { opacity: 0; }
+
+div#mid
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+div#midPic
+{
+    text-align: right;
+    margin-right: 30px;
+}
+
+img#pic
+{
+    height: 100px;
+    width: 100px;
+}
+
+div#bottom
+{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+hr#bottom
+{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(28, 33, 40), #ffee00, rgb(28, 33, 40));
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+button#addToServer
+{
+    background: none;
+    color: white;
+    font-family: 'Andika';
+    background-image: -webkit-linear-gradient(45deg, rgb(59, 165, 93) 50%, transparent 100%);
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: 400ms ease-in-out;
+    transition: 400ms ease-in-out;
+    font-size: 15px;
+    border-radius: 7px;
+    border: 3px solid rgb(59, 165, 93);
+    background-size: 900px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+button#addToServer:hover
+{   
+    background-position: 200%;
+    box-shadow: -2px 2px rgb(59, 165, 93);
+}
+
+span#madeBy
+{
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+span#name
+{
+    color: #ffee00;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    text-decoration: none;
+}
+
+span#name:hover
+{
+    color: white;
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+div#bottomButtons
+{
+    text-align: center;
+    opacity: 0;
+}
+
+img#discord, img#github, img#reddit, img#steam
+{
+    height: 30px;
+    width: 30px;
+}
+
+button#discord, button#github, button#reddit, button#steam
+{
+    background: none;
+    border: none;
+    border-radius: 100px;
+    transition: ease-in-out;
+    transition-duration: 200ms;
+    padding: 4px;
+    margin: 4px;
+}
+
+button#discord:hover, button#github:hover, button#reddit:hover, button#steam:hover
+{
+    transform: translateY(-5px);
+    transition: ease-in-out;
+    transition-duration: 200ms;
+}
+
+::-webkit-scrollbar { background: none; }
