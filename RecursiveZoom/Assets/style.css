@@ -1,0 +1,58 @@
+body { background: linear-gradient(45deg, #94bbe9, #eeaeca); }
+
+div#video
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+}
+
+video#main
+{
+    height: 60%;
+    width: 60%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    transition: ease-in-out;
+    transition-duration: 200ms;
+    filter: blur(1px);
+}
+
+video#main:hover
+{
+    height: 63%;
+    width: 63%;
+    filter: blur(0);
+    transition: ease-in-out;
+    transition-duration: 200ms;
+    box-shadow: 0 0 10px 7px rgba(37, 34, 34, 0.3);
+}
+
+img#play, img#pause
+{
+    position: absolute;
+    bottom: 3%;
+    height: 12%;
+    opacity: 0;
+}
+
+div#yt
+{
+    position: fixed;
+    top: 0;
+    margin-top: 8px;
+}
+
+img#yt
+{
+    height: 50px;
+    width: 50px;
+}
+
+button#yt
+{
+    border: none;
+    background: none;
+}
