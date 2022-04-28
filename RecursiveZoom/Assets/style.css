@@ -18,6 +18,7 @@ video#main
     transition: ease-in-out;
     transition-duration: 200ms;
     filter: blur(1px);
+    cursor: none;
 }
 
 video#main:hover
