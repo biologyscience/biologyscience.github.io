@@ -1,8 +1,8 @@
 <html>
 <head>
     <script>
-        const redirectTo = window.location.href.split('?to=')[1];
-        redirectTo?.length > 0 ? window.location.href = redirectTo : window.location.href = 'https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png';
+        const redirectTo = new URLSearchParams(window.location.search).get('to');
+        redirectTo === null ? window.location.href = 'https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png' : window.location.href = redirectTo; 
     </script>
     <title>Redirect To</title>
 </head>
