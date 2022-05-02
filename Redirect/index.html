@@ -1,0 +1,10 @@
+<html>
+<head>
+    <script>
+        let redirectTo = window.location.href.split('?to=')[1];
+
+        redirectTo.length > 0 ? window.location.href = 'http://' + redirectTo : window.location.href = '';
+    </script>
+    <title>Redirect To</title>
+</head>
+</html>
