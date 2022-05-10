@@ -8,37 +8,11 @@ const
 let
     x = 0,
     y = 0,
-    z = 0,
-    a = 0,
-    b = 1;
+    z = 0;
 
 const
     yes = ['YES !!!', 'hehee', 'lulul', 'KesavRam = Goose confirmed', 'Pro u', 'eheh bore', 'hi ig', '<s> enough </s>', 'bue :)'],
     no = ['goose aa', 'close and click yes', 'I SAID CLICK YES', 'gooseu', 'MENTAL !!!', 'Button is Disabled'];
-
-function random() { a = Math.floor(Math.random() * (yes.length - 1)); };
-
-function final()
-{   
-    random();
-
-    if (a === b)
-    {
-        const int = setInterval(() => 
-        {
-            if (a === b) { random(); }
-            else
-            {
-                clearInterval(int);
-                b = a;
-            }
-        }, 0);
-    }
-
-    else { b = a; }
-
-    return yes[a];
-};
 
 setInterval(() => {
     document.body.style.backgroundImage = 'linear-gradient(' + x + 'deg, rgb(26, 215, 245), rgb(161, 71, 235))';
@@ -56,8 +30,8 @@ setInterval(() => {
 buttonYes.onclick = () =>
 {
     if (z === no.length - 1) { z = 0; }
-
-    bottomContent.innerHTML = final();
+    
+    bottomContent.innerHTML = yes[Math.floor(Math.random() * (yes.length - 1))];
 
     bottomContent.style.animation = 'shake 200ms';
 
