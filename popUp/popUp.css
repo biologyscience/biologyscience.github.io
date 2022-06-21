@@ -24,6 +24,7 @@ button#popUpButton
 
 button#popUpButton:hover
 {
+  cursor: pointer;
   transform: translateY(-7px);
   transition: ease-in-out;
   transition-duration: 200ms;
