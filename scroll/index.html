@@ -8,11 +8,9 @@
             #line
             {
                 position: fixed;
-                height: 7px;
+                height: 1%;
                 width: 0%;
                 background-color: rgb(233, 92, 254);
-                border-top-right-radius: 100px;
-                border-bottom-right-radius: 100px;
                 transition: width 100ms ease;
             }
         </style>
@@ -33,9 +31,7 @@
             {                
                 const math = (window.scrollY / (document.body.scrollHeight - document.body.clientHeight)) * 100;
 
-                div.style.width = (Math.floor(math) + 1) + '%';
-
-                if (window.scrollY === 0) { div.style.width = '0%'; }
+                div.style.width = Math.floor(math) + '%';
             });
         </script>
     </body>
