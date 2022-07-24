@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Alpha Coders</title>
+        <link rel="shortcut icon" href="svg/Icon.svg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="top">
+            <img src="svg/Alpha Coders.svg" id="image">
+        </div>
+        <div id="middle">
+            <div>
+                A complete wrapper as a npm package for the
+                <a href="https://wall.alphacoders.com/api.php" id="API">Wallpaper Abyss API</a>
+                with type support and much more !
+            </div>
+            <div class="text">
+            Check out the links below for more information.
+            </div>
+        </div>
+        <div id="bottom">
+            <button id="github">
+                <a href="https://github.com/biologyscience/alpha-coders">
+                    <img src="svg/Github.svg" alt="GitHub" class="icons">
+                </a>
+            </button>
+
+            <button id="npm">
+                <a href="https://npmjs.com/package/alpha-coders">
+                    <img src="svg/npm.svg" alt="npm" class="icons">
+                </a>
+            </button>
+
+            <button id="website">
+                <a href="">
+                    <img src="svg/Website.svg" alt="Website" class="icons">
+                </a>
+            </button>
+
+            <button id="docs">
+                <a href="https://biologyscience.gitbook.io/alpha-coders/">
+                    <img src="svg/Docs.svg" alt="Documentation" class="icons">
+                </a>
+            </button>
+        </div>
+        
+        <script>
+            document.querySelectorAll('img').forEach(x => x.setAttribute('draggable', 'false'));
+
+            let x = 45;
+
+            setInterval(() =>
+            {
+                document.body.style.backgroundImage = 'linear-gradient(' + x + 'deg, #536DFE 10%, #FEE452)';
+                x++;
+                if (x === 360) { x = 0; }
+            }, 100);
+        </script>
+    </body>
+</html>
