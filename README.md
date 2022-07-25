@@ -7,4 +7,4 @@
 
 ---
 
-<font size="6"> Happy Coding 🥳 </font>
+## Happy Coding 🥳
