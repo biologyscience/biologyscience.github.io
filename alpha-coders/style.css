@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Brush';
+    font-family: 'Caveat Brush';
     src: url('Caveat Brush.ttf');
 }
 
@@ -19,7 +19,7 @@ body
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Brush';
+    font-family: 'Caveat Brush';
     justify-content: center;
 }
 
@@ -33,6 +33,14 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@media only screen and (max-width: 850px)
+{
+    #middle
+    {
+        font-size: 3rem;
+    }
 }
 
 .text
