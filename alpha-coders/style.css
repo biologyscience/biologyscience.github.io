@@ -20,11 +20,7 @@ body
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Brush';
-}
-
-#top
-{
-    margin-top: 3em;
+    justify-content: center;
 }
 
 #middle
