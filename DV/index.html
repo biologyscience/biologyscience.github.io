@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.7.1/rickshaw.min.css" integrity="sha512-KKmSL0eC7hDfWUgjyBrDnF1CMmmvIJHwBkkFgRmvWaB4tW1edekBh1PHpDdYnaOsf3pKlDASzG74R3KTsww4ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" integrity="sha512-oJp0DdQuQQrRsKVly+Ww6fAN1GwJN7d1bi8UubpEbzDUh84WrJ2CFPBnT4LqBCcfqTcHR5OGXFFhaPe3g1/bzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.7.1/rickshaw.min.js" integrity="sha512-3S/ENqAZXO3KkNgGFRiWLoZDJBa00SVDW87HOzZy8dNJ3Yv+mw0GOe/gbpeo562OuQ3UfLbN4eYfj8JgzKRiqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./client.js"></script>
+
+    <style>
+        #chart_container
+        {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .notX
+        {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #x_axis
+        {
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart_container">
+        <div class="notX">
+            <div id="y_axis"></div>
+            <div id="demo_chart"></div>
+        </div>
+        <div id="x_axis"></div>
+    </div>
+    <button>start or stop</button>
+</body>
+</html>
