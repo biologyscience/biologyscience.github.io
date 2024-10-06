@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.1.1/math.min.js" integrity="sha512-g9Hl9sW0nMwhkRPakKcrKyxx6NMT/vD/zu7nhggnjI9as96SdYA/KocpFXxJ1TXFZN9ki0Bv1G7NPchjiSE2VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" integrity="sha512-oJp0DdQuQQrRsKVly+Ww6fAN1GwJN7d1bi8UubpEbzDUh84WrJ2CFPBnT4LqBCcfqTcHR5OGXFFhaPe3g1/bzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.7.1/rickshaw.min.js" integrity="sha512-3S/ENqAZXO3KkNgGFRiWLoZDJBa00SVDW87HOzZy8dNJ3Yv+mw0GOe/gbpeo562OuQ3UfLbN4eYfj8JgzKRiqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./compute.js"></script>
     <script defer src="./client.js"></script>
 
     <style>
@@ -29,6 +30,29 @@
         {
             padding-left: 50px;
         }
+
+        ul
+        {
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+            list-style: none;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        li
+        {
+            display: grid;
+            grid-template-columns: 10% auto 7%;
+        }
+
+        input
+        {
+            margin-right: 1em;
+        }
+
+        #computed li { grid-template-columns: 5% 7% 5%; }
     </style>
 </head>
 <body>
@@ -40,6 +64,19 @@
         <div id="x_axis"></div>
     </div>
     <button>update load</button>
-    <input id="totalLoad" type="text" value="50">
+    <ul>
+        <li><span>F1</span><input id="F1" type="text" value="8*P1 + 0.024*P1^2 + 80"><span>Rs/Hr</span></li>
+        <li><span>F2</span><input id="F2" type="text" value="6*P2 + 0.04*P2^2 + 120"><span>Rs/Hr</span></li>
+        <li><span>P1MIN</span><input id="P1MIN" type="text" value="0"><span>MW</span></li>
+        <li><span>P1MAX</span><input id="P1MAX" type="text" value="200"><span>MW</span></li>
+        <li><span>P2MIN</span><input id="P2MIN" type="text" value="0"><span>MW</span></li>
+        <li><span>P2MAX</span><input id="P2MAX" type="text" value="200"><span>MW</span></li>
+        <li><span>Total Load</span><input id="totalLoad" type="text" value="50"><span>MW</span></li>
+    </ul>
+    <ul id="computed">
+        <li><span>P1</span><span id="P1"></span><span>MW</span></li>
+        <li><span>P2</span><span id="P2"></span><span>MW</span></li>
+        <li><span>λ</span><span id="lambda"></span><span>Rs/MW.Hr</span></li>
+    </ul>
 </body>
 </html>
