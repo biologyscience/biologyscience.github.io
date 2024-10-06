@@ -84,7 +84,7 @@ document.querySelector('button').addEventListener('click', () =>
     totalLoad = parseFloat(document.getElementById('totalLoad').value);
 
     solver.setCostFunctions({ F1, F2 }).setLimits({ P1MIN, P1MAX, P2MIN, P2MAX }).setLoad(totalLoad);
-
+    
     if (int !== undefined) return;
 
     int = setInterval(insertRandomDatapoints, timeInterval);

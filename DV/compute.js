@@ -22,18 +22,18 @@ class LoadDispatch
 
     setCostFunctions({F1, F2})
     {
-        if (!F1) this.F1 = F1;
-        if (!F2) this.F2 = F2;
+        if (F1 !== undefined) this.F1 = F1;
+        if (F2 !== undefined) this.F2 = F2;
         
         return this;
     };
     
     setLimits({P1MIN, P1MAX, P2MIN, P2MAX})
     {
-        if (!P1MIN) this.P1MIN = P1MIN;
-        if (!P1MAX) this.P1MAX = P1MAX;
-        if (!P2MIN) this.P2MIN = P2MIN;
-        if (!P2MAX) this.P2MAX = P2MAX;
+        if (P1MIN !== undefined) this.P1MIN = P1MIN;
+        if (P1MAX !== undefined) this.P1MAX = P1MAX;
+        if (P2MIN !== undefined) this.P2MIN = P2MIN;
+        if (P2MAX !== undefined) this.P2MAX = P2MAX;
         
         return this;
     };
@@ -81,8 +81,8 @@ class LoadDispatch
     #constraintCheck()
     {
         if (this.values.P1 === 0 && this.values.P2 === 0) this.values.lambda = 0;
-        if (this.values.P1 < 0) this.#redoCalculations({P1Value: 0});
-        if (this.values.P2 < 0) this.#redoCalculations({P2Value: 0});
+        if (this.values.P1 < this.P1MIN) this.#redoCalculations({P1Value: this.P1MIN});
+        if (this.values.P2 < this.P2MIN) this.#redoCalculations({P2Value: this.P2MIN});
         if (this.values.P1 > this.P1MAX) this.#redoCalculations({P1Value: this.P1MAX});
         if (this.values.P2 > this.P2MAX) this.#redoCalculations({P2Value: this.P2MAX});
     };
