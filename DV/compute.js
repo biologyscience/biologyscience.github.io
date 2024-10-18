@@ -1,5 +1,7 @@
 const { derivative, lusolve, rationalize, evaluate } = math;
 
+// P = P target + A.e^-daming*t . cos(w*t)
+
 class LoadDispatch
 {
     F1;
