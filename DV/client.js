@@ -60,8 +60,8 @@ const speedGraph = new Rickshaw.Graph(
     width,
     height,
     renderer: "line",
-    min: 1300,
-    max: 1600,
+    min: 1350,
+    max: 1550,
     series: new Rickshaw.Series.FixedDuration(
     [
         {
@@ -184,8 +184,17 @@ setInterval(() =>
 
     powerGraph.series.addData({ P1Inst, P2Inst });
 
-    N1Inst = N1 + controlResponse(I1) || N1;
-    N2Inst = N2 + controlResponse(I2) || N2;
+    if ((P1old + P2old) > (P1 + P2))
+    {
+        N1Inst = N1 + controlResponse(I1) || N1;
+        N2Inst = N2 + controlResponse(I2) || N2;
+    }
+
+    else
+    {
+        N1Inst = N1 - controlResponse(I1) || N1;
+        N2Inst = N2 - controlResponse(I2) || N2;
+    }
 
     speedGraph.series.addData({ N1Inst, N2Inst });
 
@@ -250,8 +259,8 @@ document.querySelector('button').addEventListener('click', () =>
 
     N1 = parseFloat(document.getElementById('N1Ref').value);
     N2 = parseFloat(document.getElementById('N2Ref').value);
-    I2 = parseFloat(document.getElementById('I1').value);
-    I2 = parseFloat(document.getElementById('I2').value);
+    I1 = parseFloat(document.getElementById('I1').value.split('/')[1]);
+    I2 = parseFloat(document.getElementById('I2').value.split('/')[1]);
 
     solver.setCostFunctions({ F1, F2 }).setLimits({ P1MIN, P1MAX, P2MIN, P2MAX }).setLoad(totalLoad);
 
@@ -261,10 +270,10 @@ document.querySelector('button').addEventListener('click', () =>
     P2 = data.P2;
     LAMBDA = data.lambda;
 
-    t = 0;
-
     resizeYaxis();
 
     prevPower[0] = prevPower[1];
     prevPower[1] = [P1, P2];
+
+    t = 0;
 });
