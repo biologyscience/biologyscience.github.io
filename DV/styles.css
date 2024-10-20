@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* { font-family: 'Ubuntu', serif; }
+
 body
 {
     margin: 2em 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#title
+{
+    font-size: 1.5em;
+    padding-bottom: 4ch;
 }
 
 button
@@ -30,6 +40,23 @@ button:hover
 {
     position: relative;
     margin: 1em 0;
+}
+
+.chart_container.Hz
+{
+    margin-top: 3em;
+}
+
+.title
+{
+    position: absolute;
+    left: 35%;
+    top: -12%;
+}
+
+.title.Hz
+{
+    left: 40%;
 }
 
 .notX
@@ -62,7 +89,7 @@ button:hover
 .inputs
 {
     display: flex;
-    gap: 5em;
+    gap: 10em;
     justify-content: center;
 }
 
@@ -100,5 +127,7 @@ input
     display: grid;
     align-items: center;
     gap: 1em;
-    grid-template-columns: 50% 50% 10%;
+    grid-template-columns: 50% auto 10%;
 }
+
+.underline { text-decoration: underline; }

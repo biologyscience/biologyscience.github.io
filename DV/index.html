@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Real Time ELD</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rickshaw/1.7.1/rickshaw.min.css" integrity="sha512-KKmSL0eC7hDfWUgjyBrDnF1CMmmvIJHwBkkFgRmvWaB4tW1edekBh1PHpDdYnaOsf3pKlDASzG74R3KTsww4ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
@@ -14,8 +14,10 @@
     <script defer src="./client.js"></script>
 </head>
 <body>
+    <div id="title">Real time visualization of different parameters during economic load dispatch</div>
     <div class="graphs">
         <div class="chart_container">
+            <span class="title">Power generated (MW)</span>
             <div class="notX">
                 <div id="powerY"></div>
                 <div id="power"></div>
@@ -24,6 +26,7 @@
             <div id="powerLegend"></div>
         </div>
         <div class="chart_container">
+            <span class="title">Speed of generators (RPM)</span>
             <div class="notX">
                 <div id="speedY"></div>
                 <div id="speed"></div>
@@ -32,7 +35,8 @@
             <div id="speedLegend"></div>
         </div>
     </div>
-    <div class="chart_container">
+    <div class="chart_container Hz">
+        <span class="title Hz">Frequency (Hz)</span>
         <div class="notX">
             <div id="fY"></div>
             <div id="frequency"></div>
@@ -42,31 +46,39 @@
     <button>Update Parameters</button>
     <div class="outputs">
         <ul class="computed">
-            <li><span>P1</span><span id="P1"></span><span>MW</span></li>
-            <li><span>P2</span><span id="P2"></span><span>MW</span></li>
             <li><span>Total Load</span><span id="P1+P2"></span><span>MW</span></li>
-            <li><span>λ</span><span id="lambda"></span><span>Rs/MW.Hr</span></li>
-            <li><span>Generator 1 Speed</span><span id="N1"></span><span>RPM</span></li>
-            <li><span>Generator 2 Speed</span><span id="N2"></span><span>RPM</span></li>
+            <li><span>Incremental Fuel Cost</span><span id="lambda"></span><span>Rs/MW.Hr</span></li>
             <li><span>Frequency</span><span id="F"></span><span>Hz</span></li>
+            <li></li>
+            <li><span class="underline">Generator 1</span></li>
+            <li><span>Power</span><span id="P1"></span><span>MW</span></li>
+            <li><span>Speed</span><span id="N1"></span><span>RPM</span></li>
+            <li></li>
+            <li><span class="underline">Generator 2</span></li>
+            <li><span>Power</span><span id="P2"></span><span>MW</span></li>
+            <li><span>Speed</span><span id="N2"></span><span>RPM</span></li>
         </ul>
     </div>
     <div class="inputs">
-        <ul class="parameters">
-            <li><span>Generator 1 Cost Function</span><input id="F1" type="text" value="8*P1 + 0.024*P1^2 + 80"><span>Rs/Hr</span></li>
-            <li><span>Generator 2 Cost Function</span><input id="F2" type="text" value="6*P2 + 0.04*P2^2 + 120"><span>Rs/Hr</span></li>
-            <li><span>P1MIN</span><input id="P1MIN" type="text" value="0"><span>MW</span></li>
-            <li><span>P1MAX</span><input id="P1MAX" type="text" value="200"><span>MW</span></li>
-            <li><span>P2MIN</span><input id="P2MIN" type="text" value="0"><span>MW</span></li>
-            <li><span>P2MAX</span><input id="P2MAX" type="text" value="200"><span>MW</span></li>
-            <li><span>Total Load</span><input id="totalLoad" type="text" value="50"><span>MW</span></li>
+        <ul class="parameters gen1">
+            <div class="underline">Generator 1</div>
+            <li><span>Cost Function</span><input id="F1" type="text" value="8*P1 + 0.024*P1^2 + 80"><span>Rs/Hr</span></li>
+            <li><span>Minimum Power</span><input id="P1MIN" type="text" value="0"><span>MW</span></li>
+            <li><span>Maximum power</span><input id="P1MAX" type="text" value="200"><span>MW</span></li>
+            <li><span>Synchronous Speed</span><input type="text" id="N1Ref" value="1500"><span>RPM</span></li>
+            <li><span>Inertial Constant</span><input type="text" id="I1" value="1/20"><span></span></li>
         </ul>
-        <ul class="parameters">
-            <li><span>Generator 1 Synchronous Speed</span><input type="text" id="N1Ref" value="1500"><span>RPM</span></li>
-            <li><span>Generator 1 Inertial Constant</span><input type="text" id="I1" value="1/20"><span></span></li>
-            <li><span>Generator 2 Synchronous Speed</span><input type="text" id="N2Ref" value="1400"><span>RPM</span></li>
-            <li><span>Generator 2 Inertial Constant</span><input type="text" id="I2" value="1/10"><span></span></li>
+        <ul class="parameters gen2">
+            <div class="underline">Generator 2</div>
+            <li><span>Cost Function</span><input id="F2" type="text" value="6*P2 + 0.04*P2^2 + 120"><span>Rs/Hr</span></li>
+            <li><span>Minimum Power</span><input id="P2MIN" type="text" value="0"><span>MW</span></li>
+            <li><span>Maximum power</span><input id="P2MAX" type="text" value="200"><span>MW</span></li>
+            <li><span>Synchronous Speed</span><input type="text" id="N2Ref" value="1400"><span>RPM</span></li>
+            <li><span>Inertial Constant</span><input type="text" id="I2" value="1/10"><span></span></li>
         </ul>
     </div>
+    <ul class="parameters">
+        <li><span>Total Load</span><input id="totalLoad" type="text" value="50"><span>MW</span></li>
+    </ul>
 </body>
 </html>
