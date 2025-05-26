@@ -1,5 +1,5 @@
 const
-    height = 250,
+    height = 200,
     width = height * 2,
     ymax = 100,
     ymin = 0,
@@ -38,7 +38,7 @@ new Rickshaw.Graph.Axis.Y(
     graph: powerGraph,
     orientation: "left",
     tickFormat: (x) => x,
-    ticks: 10,
+    ticks: 5,
     element: document.getElementById("powerY"),
     width: 50
 });
@@ -86,7 +86,7 @@ new Rickshaw.Graph.Axis.Y(
     graph: speedGraph,
     orientation: "left",
     tickFormat: (x) => x,
-    ticks: 10,
+    ticks: 5,
     element: document.getElementById("speedY"),
     width: 50
 });
